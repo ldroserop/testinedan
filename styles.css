@@ -1,0 +1,258 @@
+body{
+    font-size: large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration-line: none;
+    background-color: skyblue;
+    font-style: italic;
+}
+
+/* Estilos para el header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color:darkblue;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .header-left h1, p {
+    margin: 0px;
+    color: white;
+  }
+
+  .header-left img {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+  }
+  
+  .social-icons {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    color: white;
+  }
+  
+  .header-right a {
+    margin-left: 10px;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+  }
+  
+/* Estilos para el menú */
+.menu, footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu-list li {
+    position: relative;
+    list-style: none;
+  }
+  
+  .menu-list a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 9999;
+  }
+  
+  .sub-menu li {
+    width: 100%;
+  }
+  
+  .menu-list li:hover > .sub-menu {
+    display: block;
+  }
+  
+  /* Estilos para el menú en dispositivos móviles */
+  @media screen and (max-width: 700px) {
+    .menu-list {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: block;
+      text-align: right;
+      padding: 10px;
+      cursor: pointer;
+    }
+  
+    .menu-list.show {
+      display: block;
+      position: absolute;
+      top: auto;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+    }
+  
+    .menu-list.show li {
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    .menu-list.show li:last-child {
+      border-bottom: none;
+    }
+  
+    .has-submenu > a::after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      float: right;
+      margin-top: 2px;
+    }
+  
+    .has-submenu.open > a::after {
+      content: "\f077";
+    }
+  
+    .sub-menu {
+      position: static;
+      padding-left: 20px;
+    }
+  
+    .has-submenu:hover > .sub-menu {
+      display: block;
+    }
+  }
+
+  /*Sección del Carrusel*/
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow:visible;
+    background-color: white;
+  }
+  
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5 ease-in-out;
+  }
+  
+  .carousel-slide.active {
+    opacity: 1;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-decoration: none;
+    z-index: 1;
+    font-weight: bolder;
+    font-size: 48px;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+/*Sección de Noticias*/
+  .texto{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration-line: underline; 
+  }
+
+  .tex a{
+    color: white;
+    text-align: right;
+    text-decoration-line: underline;
+    font-size: large;
+  }
+
+  .texto h3, a{
+    color: black;
+    text-align: center;
+    text-decoration-line: none;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  
+  .grid-item {
+    background-color: #f2f2f2;
+    padding: 2px;
+    text-align: center;
+  }
+  
+  .big {
+    grid-row: span 2;
+    grid-column: span 1;
+    font-size: xx-large;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 700px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+/*Sección del Footer*/
+footer p{
+    color: #000;
+}
